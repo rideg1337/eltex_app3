@@ -3,21 +3,23 @@ import time
 import os
 import sqlite3
 import telnetlib
+from dotenv import load_dotenv
 from flask import Flask, request, render_template, redirect, url_for, session
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+load_dotenv()
 
 vendor_cache = {}
 
 app = Flask(__name__)
-app.secret_key = "8f9aA9c92C0df21b3E7eFe127ed49b91"
+app.secret_key = os.getenv('appseckey')
 
-USERNAME = "user"
-PASSWORD = "stcable"
+USERNAME = os.getenv('routeruser')
+PASSWORD = os.getenv('routerpass')
 
-TELNET_USER = "admin"
-TELNET_PASSWORD = "p0nstt#m/cir"
+TELNET_USER = os.getenv('teluser')
+TELNET_PASSWORD = os.getenv('telpass')
 TELNET_PORT = 23
 
 def is_valid_mac(mac):
@@ -43,7 +45,7 @@ def get_mac_vendor(mac):
             vendor_cache[prefix] = vendor
             return vendor
     except Exception as e:
-        print("SQLite hiba:", e)
+        print("SQLite Error:", e)
 
     return "Unknown vendor"
 
@@ -80,17 +82,22 @@ def fetch_hostnames_telnet(router_ip):
         return host_dict
 
     except Exception as e:
-        print(f"Telnet hiba: {e}")
+        print(f"Telnet Error: {e}")
         return {}
 
 def fetch_dhcp_clients(router_ip):
     chrome_options = Options()
-    chrome_options.binary_location = os.getenv("CHROME_BIN", "/usr/bin/chromium")
+    chrome_bin = os.getenv("CHROME_BIN")
+    # added .env and no need to define the chrome_bin location
+    if chrome_bin:
+        chrome_options.binary_location = chrome_bin
+
     chrome_options.add_argument("--headless=new")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--disable-logging")
     chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"])
+
 
     driver = webdriver.Chrome(options=chrome_options)
 
@@ -138,7 +145,7 @@ def fetch_dhcp_clients(router_ip):
         return clients
 
     except Exception as e:
-        print("Selenium hiba:", e)
+        print("Selenium Error:", e)
         return []
 
     finally:

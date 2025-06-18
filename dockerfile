@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
     libx11-xcb1 \
     && rm -rf /var/lib/apt/lists/*
 
-# Környezetváltozó beállítása a Chromium futtatásához
+
 ENV CHROME_BIN=/usr/bin/chromium
 ENV PATH="$PATH:/usr/lib/chromium/"
 
