@@ -8,6 +8,7 @@
 **/.project
 **/deploy_windows
 **/env_generator
+**/screenshots
 **/.settings
 **/.toolstarget
 **/.vs
