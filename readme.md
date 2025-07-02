@@ -1,7 +1,7 @@
 # ELTEX DHCP PULLER
 Egyszeru webes app ami Eltex ONT DHCP tablabol kiszedi az IP-t, MAC-et, vendor infot, es hostname-et telnettel.
 Fontos megjegyeznem hogy csak az 5421G-WAC es 5421G-WAC-REVB modellekkel mukodik (egyenlore)
-Ajanlok VPN kapcsolatot ha remote-bol dolgozunk a TR069 managment ip-t hasznaljuk vagy lokalisan az eltex 192.168.1.1 cimen elerheto
+Ajanlok VPN kapcsolatot ha remote-bol dolgozunk a TR069 managment ip-t hasznaljuk gitvagy lokalisan az eltex 192.168.1.1 cimen elerheto
 
 ## Mire jo?
 
@@ -37,6 +37,7 @@ Siman csak futtasd a `deploy_windows/start.bat` fajlt
 
 
  Docker buildelese es futtatasa:
+ Dockerben mar gunicorn is hozza van adva igy egyszerre tobb kerest is tud kezelni parhuzamosan `dockerfile`-ban skalazhato
 
  Fontos hogy a `.env` fajlt generaljuk le! Csak igy fug mukodni normalisan az app!
 
