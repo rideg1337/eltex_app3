@@ -5,7 +5,7 @@
 ## Pelda az inditashoz:
 
 ### .env Generalasa
- A `.env` fajlba kerulnek az erzekeny adatok amiket a script hasznal (username-password stb), ez nelkulozhetetlen a biztonsagos inditashoz, es szukseges legeneralnunk.
+ Az `.env` fajlba kerulnek az erzekeny adatok amiket a script hasznal (username-password stb), ez nelkulozhetetlen a biztonsagos inditashoz, es szukseges legeneralnunk.
  Konnyeden letudod generalni;
 
  Commandline:

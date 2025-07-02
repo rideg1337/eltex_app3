@@ -88,7 +88,7 @@ def fetch_hostnames_telnet(router_ip):
 def fetch_dhcp_clients(router_ip):
     chrome_options = Options()
     chrome_bin = os.getenv("CHROME_BIN")
-    # added .env and no need to define the chrome_bin location
+    # added .env and now need to define the chrome_bin location
     if chrome_bin:
         chrome_options.binary_location = chrome_bin
 
