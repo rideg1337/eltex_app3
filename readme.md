@@ -103,3 +103,6 @@ This implements a simple **Continuous Integration (CI)** and **Continuous Deploy
 1. Make sure the Jenkins user has permission to run Docker commands.
 2. Keep the .env file secure; never commit it to the repository.
 3. Adjust ports and image names as needed.
+
+### Learning note:
+This project is a personal learning exercise to improve my skills in Python, Docker, and CI/CD pipelines with Jenkins. It’s not production-ready software, but a functional prototype that I continuously improve as I learn. Contributions and feedback are very welcome!
