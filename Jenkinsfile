@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    }
+    
 
     environment {
         IMAGE_NAME = "rideg/eltex-app"
