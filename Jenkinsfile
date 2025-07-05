@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+         image 'python:3.11-slim'
+         args '-u'
+        }
+    }
 
     environment {
         IMAGE_NAME = "rideg/eltex-app"
