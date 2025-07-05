@@ -2,6 +2,8 @@
 
 A simple web application that extracts IP addresses, MAC addresses, vendor information, and hostnames from the DHCP table of Eltex ONT devices using Telnet.
 
+![Interface](screenshots/ui.png)
+
 **Note:** Currently, it only supports the 5421G-WAC and 5421G-WAC-REVB models.
 
 It is recommended to use a VPN connection when accessing the TR069 management IP remotely, or access locally via the Eltex device at 192.168.1.1.
