@@ -28,7 +28,7 @@ pipeline {
 
         stage('Run app') {
             steps {
-                sh "docker run -d --rm --env-file .env -p 5055:5000 $IMAGE_NAME"
+                sh "docker run -d --rm --env-file .env -p 5055:5055 $IMAGE_NAME"
             }
         }
     }
